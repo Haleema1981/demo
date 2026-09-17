@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 // 1. Connect to the BanoQabil database
-mongoose.connect('mongodb://localhost:27017/BanoQabil')
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.log('Connection error:', err));
 
